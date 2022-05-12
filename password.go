@@ -12,6 +12,6 @@ func EncryptPassword(password, salt string) string {
 	return hex.EncodeToString(h.Sum([]byte(password)))
 }
 // password：未进行处理的原密码，encryptPassword：进行过加密的密码，salt:加盐值
-func verifyPassword(password, encryptPassword,salt string) bool {
+func VerifyPassword(password, encryptPassword,salt string) bool {
 	return EncryptPassword(password, salt) == encryptPassword
 }
